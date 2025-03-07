@@ -1,13 +1,7 @@
 import Butter from 'buttercms';
 
-export let butterCMS;
+const butter = Butter(import.meta.env.VITE_BUTTERCMS_API_KEY); // Use your API key
 
-try {
-  const butterCmsPreview = !(process.env.VITE_BUTTERCMS_API_PREVIEW === "false" || process.env.VITE_BUTTERCMS_API_PREVIEW === "0")
-  
-  butterCMS = Butter(process.env.VITE_BUTTERCMS_API_KEY, butterCmsPreview);
-} catch (error) {
-  console.error(error)
-}
+export default butter;
 
 

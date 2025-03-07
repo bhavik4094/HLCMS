@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import butter from "../../utils/buttercms";
 
 function Header() {
-    onst [menuItems, setMenuItems] = useState([]);
+    const [menuItems, setMenuItems] = useState([]);
 
   useEffect(() => {
     butter.content

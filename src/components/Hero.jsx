@@ -1,5 +1,5 @@
 import React from 'react'
-import HeroThumbImg from "../assets/img/weather-wood.webp";
+import HeroThumbImg from "../assets/img/Hero-two-img.webp";
 
 function Hero() {
 

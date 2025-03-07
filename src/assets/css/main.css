@@ -1,0 +1,21 @@
+#root {
+    max-width: 2000px !important;
+    
+}
+/* hero-section css */
+img.hero-img {
+    height: 100vh;
+    width: 100%;
+    object-fit: cover;
+}
+.Hero-section {
+    height: 100vh;
+}
+
+
+
+/* services css */
+.Service-section{
+    background-image: url(/src/assets/img/services-bg-img\ \(2\).jpg);
+   
+}

@@ -16,6 +16,6 @@ img.hero-img {
 
 /* services css */
 .Service-section{
-    background-image: url(/src/assets/img/services-bg-img\ \(2\).jpg);
+    background-image: url("/src/assets/img/services-bg.jpg");
    
 }

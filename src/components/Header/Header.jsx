@@ -34,13 +34,33 @@ function Header() {
         
         <div className="collapse navbar-collapse" id="navbarNav">
           <ul className="navbar-nav ms-auto">
-            {menuItems.map((item) => (
-              <li key={item.title} className="nav-item">
-                <a className="nav-link" href={item.url}>
-                  {item.title}
+            
+              <li className="nav-item">
+                <a className="nav-link" href="#">
+                  Home
                 </a>
               </li>
-            ))}
+              <li className="nav-item">
+                <a className="nav-link" href="#">
+                  Shop
+                </a>
+              </li>
+              <li className="nav-item">
+                <a className="nav-link" href="#">
+                  About
+                </a>
+              </li>
+              <li className="nav-item">
+                <a className="nav-link" href="#">
+                  Team
+                </a>
+              </li>
+              <li className="nav-item">
+                <a className="nav-link" href="#">
+                  BLog
+                </a>
+              </li>
+            
           </ul>
 
           

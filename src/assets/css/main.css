@@ -103,13 +103,14 @@ a.shop-more-btn {
     font-weight: 700;
 }
 .btn-part {
-    margin-top: 4em;
+    margin-top: 4em !important;
 }
 p.product-price {
     font-weight: 700;
     font-size: 20px;
     padding: 10px 0px;
 }
+
 h3.product-name {
     font-size: 22px;
     font-weight: 700;

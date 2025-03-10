@@ -15,7 +15,7 @@ function Header() {
       <div className="container">
         {/* Logo */}
         <a className="navbar-brand fw-bold" href="/">
-          BERG BAT
+            Delano Bats
         </a>
 
         {/* Mobile Toggle Button */}

@@ -11,7 +11,7 @@ const HomePage = () => {
 
   useEffect(() => {
     butter.page
-      .retrieve("*", "home-page")
+      .retrieve("*", "home")
       .then((res) => setContent(res.data.data.fields))
       .catch((err) => console.error(err));
   }, []);

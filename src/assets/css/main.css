@@ -1,4 +1,6 @@
-
+body{
+    overflow-x: hidden;
+}
 /* hero-section css */
 img.hero-img {
     height: 100vh;
@@ -25,7 +27,7 @@ img.hero-img {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 80px 80px 20px 80px; 
+    padding: 0px 80px 20px 80px; 
 }
 .service-headline {
     font-size: 33px;
@@ -43,14 +45,15 @@ h3.service-type-name {
     font-size: 18px;
     color: white;
     text-align: center;
-    margin: 0 18em;
+    margin: 0 3em;
     line-height: 1.8em;
 }
 .card-container {
     background-color: white;
     text-align: center;
-    padding: 15px 10px;
-  
+    padding: 15px 22px;
+    max-height: 400px;
+    height: 100%;
 }
 .service-card .container {
     max-width: 1050px;

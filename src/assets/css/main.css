@@ -7,14 +7,19 @@ img.hero-img {
 }
 .Hero-section {
     height: 100vh;
+    padding: 0;
 }
-
+.hero .container {
+    max-width: 100% !important;
+    padding: 0px;
+    margin: 0px;
+}
 
 
 /* services css */
 .Service-section {
     background-image: url(/src/assets/img/services-bg.jpg);
-    height: 100vh;
+    padding: 100px 0px 50px 0px;
 }
 .service-inner-content{
     display: flex;
@@ -22,17 +27,31 @@ img.hero-img {
     align-items: center;
     padding: 80px 80px 20px 80px; 
 }
-.service-headline{
-    font-size: 30px;
+.service-headline {
+    font-size: 33px;
     color: #c71f3f;
+    margin-bottom: 20px;
 }
-.service-subline{
-    font-size: 20px;
+h3.service-type-name {
+    color: #c71f3f;
+    padding-top: 20px;
+}
+.service-card {
+    margin-top: 5em;
+}
+.service-subline {
+    font-size: 18px;
     color: white;
     text-align: center;
-    margin: 0 15em;
-    line-height: 1.5em;
+    margin: 0 18em;
+    line-height: 1.8em;
 }
 .card-container {
     background-color: white;
+    text-align: center;
+    padding: 15px 10px;
+  
+}
+.service-card .container {
+    max-width: 1050px;
 }

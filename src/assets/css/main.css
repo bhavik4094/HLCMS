@@ -58,3 +58,60 @@ h3.service-type-name {
 .service-card .container {
     max-width: 1050px;
 }
+
+
+/* product section */
+.product-section .container {
+    max-width: 1600px;
+}
+.product-section {
+    background-color: #000000;
+    padding: 70px 0px 70px 0px;
+    text-align: center;
+}
+img.product-img {
+    width: 100%;
+}
+.product-card {
+    background-color: white;
+    text-align: center;
+}
+.product-card {
+    background-color: white;
+    padding: 30px 20px;
+}
+a.buy-btn {
+    background-color: #C5203D;
+    color: white;
+    font-size: 20px;
+    padding: 0.5em 6.3em;
+    text-decoration: none;
+}
+h2.product-section-title {
+    text-align: center;
+    padding-bottom: 1em;
+    font-size: 40px;
+    color: white;
+    font-weight: 700;
+}
+a.shop-more-btn {
+    background-color: #C5203E;
+    padding: 0.5em 4em;
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: 700;
+}
+.btn-part {
+    margin-top: 4em;
+}
+p.product-price {
+    font-weight: 700;
+    font-size: 20px;
+    padding: 10px 0px;
+}
+h3.product-name {
+    font-size: 22px;
+    font-weight: 700;
+    padding-top: 1em;
+}

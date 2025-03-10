@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import butter from "../../utils/buttercms";
+import Brandlogo from "../../assets/img/db.webp";
 
 function Header() {
     const [menuItems, setMenuItems] = useState([]);
@@ -15,9 +16,8 @@ function Header() {
       <div className="container">
         {/* Logo */}
         <a className="navbar-brand fw-bold" href="/">
-            Delano Bats
+               <img  src={Brandlogo} alt="" />
         </a>
-
         {/* Mobile Toggle Button */}
         <button
           className="navbar-toggler"

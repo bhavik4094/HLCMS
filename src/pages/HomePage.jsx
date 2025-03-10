@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import Butter from "buttercms";
 import Hero from '../components/Hero';
 import Services from "../components/Services";
+import Product from "../components/Product";
 
 const butter = Butter(import.meta.env.VITE_BUTTERCMS_API_KEY);
 
@@ -31,6 +32,7 @@ const HomePage = () => {
       <Hero />
       {/* Passing the fetched data as props to Services component */}
       <Services headline={headline} subline={subline} servicesData={servicesData} />
+      <Product />
     </div>
   );
 };

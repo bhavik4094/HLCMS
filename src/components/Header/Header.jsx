@@ -1,12 +1,12 @@
 import { useEffect, useState } from "react";
-import butter from "../../utils/buttercms";
+import butterCMS from "../../utils/buttercms";
 import Brandlogo from "../../assets/img/db.webp";
 
 function Header() {
     const [menuItems, setMenuItems] = useState([]);
 
   useEffect(() => {
-    butter.content
+    butterCMS.content
       .retrieve(["navigation_menu"])
       .then((res) => setMenuItems(res.data.data.navigation_menu))
       .catch((err) => console.error("Error fetching menu:", err));
@@ -14,11 +14,11 @@ function Header() {
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
       <div className="container">
-        {/* Logo */}
+        
         <a className="navbar-brand fw-bold" href="/">
                <img  src={Brandlogo} alt="" />
         </a>
-        {/* Mobile Toggle Button */}
+        
         <button
           className="navbar-toggler"
           type="button"
@@ -31,7 +31,7 @@ function Header() {
           <span className="navbar-toggler-icon"></span>
         </button>
 
-        {/* Navbar Links */}
+        
         <div className="collapse navbar-collapse" id="navbarNav">
           <ul className="navbar-nav ms-auto">
             {menuItems.map((item) => (
@@ -43,7 +43,7 @@ function Header() {
             ))}
           </ul>
 
-          {/* Cart Icon */}
+          
           <div className="ms-3 position-relative">
             <a href="/cart" className="text-white">
               🛒

@@ -1,9 +1,16 @@
 import { useEffect, useState } from "react";
 import butterCMS from "../../utils/buttercms";
 import Brandlogo from "../../assets/img/db.webp";
-import BrandLogo from "../../assets/img/db.webp";
 
-const Header = () => {
+function Header() {
+    const [menuItems, setMenuItems] = useState([]);
+
+  useEffect(() => {
+    butterCMS.content
+      .retrieve(["navigation_menu"])
+      .then((res) => setMenuItems(res.data.data.navigation_menu))
+      .catch((err) => console.error("Error fetching menu:", err));
+  }, []);
   return (
     <header className="trans-header">
       <nav className="navbar navbar-expand-lg navbar-light ">

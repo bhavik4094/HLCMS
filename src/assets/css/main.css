@@ -97,11 +97,11 @@ img.hero-img-second {
     pointer-events: none; /* Prevents it from blocking interactions */
   }
   
-
+ 
 /* services css */
 .Service-section {
-    background-image: url(/src/assets/img/services-bg.jpg);
-    padding: 100px 0px 50px 0px;
+  background-color: #000;
+    padding: 100px 0px 70px 0px;
 }
 .service-inner-content{
     display: flex;
@@ -118,12 +118,12 @@ h3.service-type-name {
     font-size: 21px;
 }
 .service-headline {
-    font-size: 35px;
+    font-size: 45px;
     color: var(--primary-color);
     margin-bottom: 20px;
 }
 .service-card {
-    margin-top: 5em;
+    margin-top: 2em;
 }
 .service-subline {
     font-size: 18px;
@@ -154,6 +154,7 @@ p.service-description {
     background-color: #000000;
     padding: 70px 0px 70px 0px;
     text-align: center;
+    border-bottom: 1px solid gray;
 }
 img.product-img {
     width: 100%;
@@ -263,6 +264,7 @@ p.story-des {
     text-align: center;
     font-family: Arial, sans-serif;
     padding-bottom: 20px;
+    padding-top: 2em;
   }
   
   .subscription-section h3 {

@@ -28,18 +28,16 @@ function Footer({ footerMenu }) {
               </div>
               <div className="footer-contact">
                 <div className="social-icons">
-                  <a href="#"><FaFacebookF /></a>
-                  <a href="#"><FaXTwitter /></a>
-                  <a href="#"><FaInstagram /></a>
-                  <a href="#"><FaYoutube /></a>
+                  <a target="_blank" href="https://www.facebook.com/delanobats/"><FaFacebookF /></a>
+                  <a target="_blank" href="https://www.instagram.com/delanobatco/"><FaInstagram /></a>
+                  <a target="_blank" href="https://x.com/i/flow/login?redirect_after_login=%2FDelanoBats"><FaXTwitter /></a>
                 </div>
-                <p>305 E Woodmen Rd,<br />Colorado Springs, CO 80919</p>
-                <p><FaEnvelope /> trevor@bergbat.com</p>
-                <p><FaPhone /> 719-203-9100</p>
+                <p>Delano Bat Company, LLC <br />4435 Farmington Ave SE <br />Delano, MN 55328</p>
+                <p><FaEnvelope /> sales@delanobats.com</p>
               </div>
             </div>
             <div className="footer-bottom">
-              <p>© 2025 Berg Bat Company | All Rights Reserved. Powered By CWS.</p>
+              <p>© 2025 Delano Bat Company, LLC | All Rights Reserved. Powered By CWS.</p>
               <div className="payment-methods">
                 <img src={paypalLogo} alt="PayPal" />
               </div>

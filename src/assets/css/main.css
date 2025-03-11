@@ -251,6 +251,11 @@ a.readbtn {
     padding: 16px 40px;
     border-radius: 21px;
 }
+a.readbtn:hover {
+    background-color: white;
+    color: #d93e22;
+    font-weight: 600;
+}
 
 p.story-des {
     font-size: 20px;

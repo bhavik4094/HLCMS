@@ -1,9 +1,6 @@
-import { useEffect, useState } from "react";
-import butterCMS from "../../utils/buttercms";
-import Brandlogo from "../../assets/img/db.webp";
 import BrandLogo from "../../assets/img/db.webp";
 
-const Header = () => {
+const Header = ({leftMenu, rightMenu}) => {
   return (
     <header className="trans-header">
       <nav className="navbar navbar-expand-lg navbar-light ">
@@ -24,15 +21,11 @@ const Header = () => {
         <div className="collapse navbar-collapse justify-content-around" id="navbarNav">
           {/* Left Menu */}
           <ul className="navbar-nav">
-            <li className="nav-item mx-3">
-              <a className="nav-link text-white  fw-semibold" href="#home">Home</a>
-            </li>
-            <li className="nav-item mx-3">
-              <a className="nav-link text-white fw-semibold" href="#shop">Shop</a>
-            </li>
-            <li className="nav-item mx-3">
-              <a className="nav-link text-white fw-semibold" href="#fzntechnology">FZN Technology</a>
-            </li>
+            {leftMenu.map((item) => (
+              <li className="nav-item mx-3" key={item.label}>
+                <a className="nav-link text-white  fw-semibold" href={item.url}>{item.label}</a>
+              </li>
+            ))}
           </ul>
 
           {/* Logo in Center */}
@@ -43,15 +36,11 @@ const Header = () => {
 
           {/* Right Menu */}
           <ul className="navbar-nav">
-            <li className="nav-item mx-3">
-              <a className="nav-link text-white fw-semibold" href="#about">About</a>
-            </li>
-            <li className="nav-item mx-3">
-              <a className="nav-link text-white fw-semibold" href="#team">Team</a>
-            </li>
-            <li className="nav-item mx-3">
-              <a className="nav-link text-white fw-semibold" href="#blog">Blog</a>
-            </li>
+          {rightMenu.map((item) => (
+              <li className="nav-item mx-3" key={item.label}>
+                <a className="nav-link text-white  fw-semibold" href={item.url}>{item.label}</a>
+              </li>
+            ))}
           </ul>
         </div>
       </div>

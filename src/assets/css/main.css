@@ -388,6 +388,11 @@ p.story-des {
   .payment-methods img {
     height: 25px;
   }
+  @media (max-width: 120px) {
+    a.buy-btn {
+        padding: 0.5em 4.3em;
+    }
+  }
 @media (max-width: 990px) {
     a.buy-btn {
         padding: 0.5em 5.1em;

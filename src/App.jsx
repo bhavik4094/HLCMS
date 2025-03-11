@@ -14,7 +14,7 @@ function App() {
         .then((res) => {
           const fields = res.data.data.fields;
           const footerSection = fields.footer_component;
-          setFooterImg(footerSection.footerImg);
+          setFooterImg(footerSection.footer_logo);
         })
         .catch((err) => console.error('Error fetching data:', err));
     }, []);

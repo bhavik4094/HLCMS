@@ -169,7 +169,23 @@ h3.product-name {
         padding: 0.5em 5.3em;
        
     }
- 
+    ul.navbar-nav {
+        background-color: white;
+       
+    }
+    a.navbar-brand.fw-bold.fs-3.d-block.d-lg-none {
+        margin-left: 1em;
+    }
+    button.navbar-toggler {
+        margin-right: 1em;
+    }
+    nav.navbar .container {
+        padding: 0px !important;
+    }
+    a.nav-link.text-white.fw-semibold {
+        color: black !important;
+    }
+    
     .service-inner-content {
      padding: 0px;
      text-align: center;

@@ -5,6 +5,11 @@ const Header = ({leftMenu, rightMenu}) => {
     <header className="trans-header">
       <nav className="navbar navbar-expand-lg navbar-light ">
       <div className="container">
+          {/* Logo in Center */}
+          <a className="navbar-brand fw-bold fs-3 d-block d-lg-none " href="/">
+            
+            <img src={BrandLogo} alt="Berg Bat Logo" />
+          </a>
         {/* Toggle Button for Mobile */}
         <button
           className="navbar-toggler"
@@ -17,6 +22,7 @@ const Header = ({leftMenu, rightMenu}) => {
         >
           <span className="navbar-toggler-icon"></span>
         </button>
+        
 
         <div className="collapse navbar-collapse justify-content-around" id="navbarNav">
           {/* Left Menu */}
@@ -29,7 +35,7 @@ const Header = ({leftMenu, rightMenu}) => {
           </ul>
 
           {/* Logo in Center */}
-          <a className="navbar-brand fw-bold fs-3 " href="/">
+          <a className="navbar-brand fw-bold fs-3 d-none d-lg-block d-xl-block" href="/">
             
             <img src={BrandLogo} alt="Berg Bat Logo" />
           </a>

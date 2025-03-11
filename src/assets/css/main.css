@@ -15,6 +15,10 @@ body{
     overflow-x: hidden;
     font-family: 'Roboto', sans-serif;
 }
+.navbar-toggler {
+    border-color: rgba(255, 255, 255, 0.5); /* White border */
+}
+
 
 div,a,p {
     font-family: 'Roboto', sans-serif;
@@ -28,11 +32,20 @@ h1,h2,h3,h4,h5,h6 {
     font-family: 'Teko';
 }
 /* header css */
+button.navbar-toggler {
+    border: 0;
+}
 nav.navbar {
     position: absolute !important;
     top: 0;
     width: 100%;
     margin: 0px;
+}
+.navbar-toggler:focus {
+    text-decoration: none;
+    outline: 0;
+    border: none !important;
+    box-shadow:none !important;
 }
 
 header.trans-header {
@@ -226,15 +239,7 @@ p.story-des {
     ul.navbar-nav {
         background-color: white;
     }
-    a.navbar-brand.fw-bold.fs-3.d-block.d-lg-none {
-        margin-left: 1em;
-    }
-    button.navbar-toggler {
-        margin-right: 1em;
-    }
-    nav.navbar .container {
-        padding: 0px !important;
-    }
+ 
     a.nav-link.text-white.fw-semibold {
         color: black !important;
     }
@@ -242,6 +247,9 @@ p.story-des {
      padding: 0px;
      text-align: center;
     }
+  
+    .subscribe-input {
+        width: 400px !important;}
     .subscription-section {
         flex-direction: column !important;
         gap: 1em !important;
@@ -256,4 +264,26 @@ p.story-des {
     .product-section .container {
     max-width: 768px;
 }
+}
+@media (max-width: 480px) {
+    .subscribe-btn {
+        width: 50%;
+        margin-top: 10px;
+    }
+    nav.navbar .container {
+        padding: 0px !important;
+    }
+    a.navbar-brand.fw-bold.fs-3.d-block.d-lg-none {
+        margin-left: 1em;
+    }
+    
+    button.navbar-toggler {
+        margin-right: 1em;
+    }
+    .subscribe-input {
+        width: 325px !important;
+    }
+    .subscribe-btn {
+        width: 55%;
+    }
 }

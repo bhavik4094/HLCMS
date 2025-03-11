@@ -1,24 +1,14 @@
 import { useEffect, useState } from "react";
 import butterCMS from "../../utils/buttercms";
 import Brandlogo from "../../assets/img/db.webp";
+import BrandLogo from "../../assets/img/db.webp";
 
-function Header() {
-    const [menuItems, setMenuItems] = useState([]);
-
-  useEffect(() => {
-    butterCMS.content
-      .retrieve(["navigation_menu"])
-      .then((res) => setMenuItems(res.data.data.navigation_menu))
-      .catch((err) => console.error("Error fetching menu:", err));
-  }, []);
+const Header = () => {
   return (
-    <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+    <header className="trans-header">
+      <nav className="navbar navbar-expand-lg navbar-light ">
       <div className="container">
-        
-        <a className="navbar-brand fw-bold" href="/">
-               <img  src={Brandlogo} alt="" />
-        </a>
-        
+        {/* Toggle Button for Mobile */}
         <button
           className="navbar-toggler"
           type="button"
@@ -31,51 +21,43 @@ function Header() {
           <span className="navbar-toggler-icon"></span>
         </button>
 
-        
-        <div className="collapse navbar-collapse" id="navbarNav">
-          <ul className="navbar-nav ms-auto">
-            
-              <li className="nav-item">
-                <a className="nav-link" href="#">
-                  Home
-                </a>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link" href="#">
-                  Shop
-                </a>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link" href="#">
-                  About
-                </a>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link" href="#">
-                  Team
-                </a>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link" href="#">
-                  BLog
-                </a>
-              </li>
-            
+        <div className="collapse navbar-collapse justify-content-around" id="navbarNav">
+          {/* Left Menu */}
+          <ul className="navbar-nav">
+            <li className="nav-item mx-3">
+              <a className="nav-link text-white  fw-semibold" href="#home">Home</a>
+            </li>
+            <li className="nav-item mx-3">
+              <a className="nav-link text-white fw-semibold" href="#shop">Shop</a>
+            </li>
+            <li className="nav-item mx-3">
+              <a className="nav-link text-white fw-semibold" href="#fzntechnology">FZN Technology</a>
+            </li>
           </ul>
 
-          
-          <div className="ms-3 position-relative">
-            <a href="/cart" className="text-white">
-              🛒
-              <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
-                0
-              </span>
-            </a>
-          </div>
+          {/* Logo in Center */}
+          <a className="navbar-brand fw-bold fs-3 " href="/">
+            
+            <img src={BrandLogo} alt="Berg Bat Logo" />
+          </a>
+
+          {/* Right Menu */}
+          <ul className="navbar-nav">
+            <li className="nav-item mx-3">
+              <a className="nav-link text-white fw-semibold" href="#about">About</a>
+            </li>
+            <li className="nav-item mx-3">
+              <a className="nav-link text-white fw-semibold" href="#team">Team</a>
+            </li>
+            <li className="nav-item mx-3">
+              <a className="nav-link text-white fw-semibold" href="#blog">Blog</a>
+            </li>
+          </ul>
         </div>
       </div>
     </nav>
-  )
-}
+    </header>
+  );
+};
 
-export default Header
+export default Header;

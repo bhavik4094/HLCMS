@@ -5,7 +5,7 @@ const butter = Butter(import.meta.env.VITE_BUTTERCMS_API_KEY);
 
 function ProductCard({ product }) {
     return (
-      <div className="col-lg-3">
+      <div className="col-lg-3 col-md-6 col-12">
         <div className="product-card">
           <img className="product-img" src={product.product_img} alt={product.product_name} />
           <h3 className="product-name">{product.product_name}</h3>

@@ -1,6 +1,17 @@
 body{
     overflow-x: hidden;
 }
+/* header css */
+nav.navbar {
+    position: absolute !important;
+    top: 0;
+    width: 100%;
+    margin: 0px;
+}
+
+header.trans-header {
+    position: relative !important;
+}
 /* hero-section css */
 img.hero-img {
     height: 100vh;
@@ -115,4 +126,42 @@ h3.product-name {
     font-size: 22px;
     font-weight: 700;
     padding-top: 1em;
+}
+
+
+
+@media (max-width: 990px) {
+
+    a.buy-btn {
+       
+        padding: 0.5em 5.3em;
+       
+    }
+ 
+    .service-inner-content {
+     padding: 0px;
+     text-align: center;
+    }
+    .subscription-section {
+        flex-direction: column !important;
+        gap: 1em !important;
+        padding: 46px !important;
+    }
+   
+    .product-card {
+        background-color: white;
+        padding: 30px 20px;
+        margin-bottom: 30px;
+    }
+    .service-row {
+        margin-bottom: 30px;
+    }
+    .service-subline {
+       
+        margin: 0;
+     
+    }
+    .product-section .container {
+    max-width: 768px;
+}
 }

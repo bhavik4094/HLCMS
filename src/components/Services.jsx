@@ -13,13 +13,15 @@ function Services({ headline, subline, servicesData }) {
                     <div className="container">
                         <div className="row">
                             {servicesData.map((service, index) => (
-                                <div className="col-lg-4" key={index}>
+                            
+                                  <div className="service-row col-lg-4 col-md-6 col-12" key={index}>
                                     <div className="card-container">
                                         <img className="service-img" src={service.image} alt={service.title} />
                                         <h3 className="service-type-name">{service.title}</h3>
                                         <p className="service-description">{service.description}</p>
                                     </div>
                                 </div>
+                         
                             ))}
                         </div>
                     </div>

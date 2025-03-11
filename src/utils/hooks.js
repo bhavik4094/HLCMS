@@ -14,7 +14,7 @@ export const useMenuItems = () => {
     const loadData = async () => { 
       const response = await butterCMS.content.retrieve(["navigation_menu"]);
       const allMenus = response.data.data.navigation_menu;
-
+     
       if (allMenus.length > 0) {
         setMenus({
           mainMenu: allMenus[0]?.menu_items || [],
@@ -24,6 +24,7 @@ export const useMenuItems = () => {
           
         });
       }
+
     };
 
     loadData();

@@ -76,7 +76,10 @@
   
   /* Center - Logo */
   .footer-logo img {
-    height: 60px;
+    height: 60%;
+  }
+  .footer-logo {
+    text-align: center;
   }
   
   /* Right - Contact & Social */

@@ -1,10 +1,10 @@
 import React from "react";
 import "../../assets/css/footer.css";
-import { FaFacebookF, FaXTwitter, FaInstagram, FaYoutube, FaEnvelope, FaPhone } from "react-icons/fa6";
-import BrandLogo from "../../assets/img/db.webp";
+import { FaFacebookF, FaXTwitter, FaInstagram, FaEnvelope } from "react-icons/fa6";
+import BrandLogo from "../../assets/img/footer-logo.webp";
 import paypalLogo from "../../assets/img/Payment-icon.png";
 
-function Footer({ footerMenu }) {
+function Footer({ footerMenu, footerImg }) {
   return (
     <>
       <footer className="footer-container">
@@ -24,7 +24,7 @@ function Footer({ footerMenu }) {
                 ))}
               </ul>
               <div className="footer-logo">
-                <img src={BrandLogo} alt="Berg Bat Logo" />
+                <img src={footerImg} alt="Berg Bat Logo" />
               </div>
               <div className="footer-contact">
                 <div className="social-icons">

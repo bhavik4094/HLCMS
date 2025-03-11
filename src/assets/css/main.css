@@ -118,6 +118,12 @@ img.product-img {
 .product-card {
     background-color: white;
     text-align: center;
+    transition: all .3s ease;
+}
+.product-card:hover{
+    border: 1px solid #f9006712;
+    box-shadow: 0 2px 20px #ffe4f3;
+    transform: translateY(-3px);
 }
 .product-card {
     background-color: white;
@@ -129,6 +135,10 @@ a.buy-btn {
     font-size: 20px;
     padding: 0.5em 6.3em;
     text-decoration: none;
+}
+a.buy-btn:hover {
+   background-color: black;
+   
 }
 h2.product-section-title {
     text-align: center;
@@ -144,7 +154,15 @@ a.shop-more-btn {
     text-decoration: none;
     font-size: 20px;
     font-weight: 700;
+    transition: transform 0.3s ease-in-out !important;
 }
+a.shop-more-btn:hover {
+    transform: scale(1.1) !important;
+}
+.shop-more-btn {
+    display: inline-block;
+}
+
 .btn-part {
     margin-top: 4em !important;
 }

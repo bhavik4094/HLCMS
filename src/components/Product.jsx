@@ -56,7 +56,7 @@ function Product() {
             ))
           )}
           <div className="btn-part">
-            <a className="shop-more-btn" href="/shop">SHOP MORE</a>
+            <a className="shop-more-btn" href="#">SHOP MORE</a>
           </div>
         </div>
       </div>

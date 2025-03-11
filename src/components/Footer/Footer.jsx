@@ -2,7 +2,7 @@ import React from "react";
 import { FaFacebookF, FaXTwitter, FaInstagram, FaEnvelope } from "react-icons/fa6";
 import paypalLogo from "../../assets/img/Payment-icon.png";
 
-function Footer({ footerMenu, footerImg }) {
+function Footer({ footerMenu, footerImg, copyrightTxt }) {
   return (
     <>
       <footer className="footer-container">
@@ -35,7 +35,7 @@ function Footer({ footerMenu, footerImg }) {
               </div>
             </div>
             <div className="footer-bottom">
-              <p class="font-roboto">© 2025 Delano Bat Company, LLC | All Rights Reserved. Powered By CWS.</p>
+              <p class="font-roboto">{copyrightTxt}</p>
               <div className="payment-methods">
                 <img src={paypalLogo} alt="PayPal" />
               </div>

@@ -7,8 +7,10 @@ import paypalLogo from "../../assets/img/Payment-icon.png";
 function Footer() {
   return (
     <footer className="footer-container">
-      {/* Subscription Section */}
-      <div className="subscription-section">
+   <div className="container">
+    <div className="row">
+         {/* Subscription Section */}
+         <div className="subscription-section">
         <h3 className="text-uppercase fw-bold">Stay Up to Date</h3>
         <div className="subscription-form">
           <input type="email" placeholder="Enter Your Email" className="subscribe-input" />
@@ -53,6 +55,8 @@ function Footer() {
           <img src={paypalLogo} alt="PayPal" />
         </div>
       </div>
+    </div>
+   </div>
     </footer>
   );
 }

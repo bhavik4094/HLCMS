@@ -6,33 +6,37 @@
     padding-bottom: 20px;
   }
   
+  .subscription-section h3 {
+    margin-bottom: 10px;
+    font-size: 25px;
+    margin:0px;
+}
   /* Subscription Section */
   .subscription-section {
     background-color: #c71f3f;
-    padding: 20px;
-  }
+    padding: 42px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
   
-  .subscription-section h3 {
-    margin-bottom: 10px;
-    font-size: 20px;
-  }
   
   .subscription-form {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 5px;
+
   }
   
   .subscribe-input {
-    width: 250px;
+    width: 400px;
     padding: 10px;
     border: none;
     /* border-radius: 5px; */
-  }
-  
+}
+
   .subscribe-btn {
-    padding: 10px 15px;
+    padding: 10px 33px;
     background: black;
     color: white;
     border: none;
@@ -105,6 +109,14 @@
     align-items: center;
     font-size: 14px;
   }
+  footer.footer-container .container {
+    max-width: 1700px;
+}
+.subscription-section {
+  background-color: #c71f3f;
+  padding: 60px;
+  gap: 8em;
+}
   
   .payment-methods {
     display: flex;

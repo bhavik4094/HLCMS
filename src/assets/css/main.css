@@ -10,7 +10,9 @@
     font-family: 'Roboto', sans-serif;
     src: url('https://fonts.googleapis.com/css2?family=Roboto:wght@300..700&display=swap');
 }
-
+:root {
+    --primary-color: #d93e22;
+}
 body{
     overflow-x: hidden;
     font-family: 'Roboto', sans-serif;
@@ -54,7 +56,7 @@ header.trans-header {
 }
 
 li.nav-item a:hover {
-    color: #d93e22 !important;
+    color: var(--primary-color) !important;
 }
 /* hero-section css */
 img.hero-img {
@@ -110,14 +112,14 @@ img.hero-img-second {
 
 
 h3.service-type-name {
-    color: #d93e22;
+    color: var(--primary-color);
     padding-top: 20px;
     font-weight: 700;
     font-size: 21px;
 }
 .service-headline {
     font-size: 35px;
-    color: #d93e22;
+    color: var(--primary-color);
     margin-bottom: 20px;
 }
 .service-card {
@@ -171,7 +173,7 @@ img.product-img {
     padding: 30px 20px;
 }
 a.buy-btn {
-    background-color: #d93e22;
+    background-color: var(--primary-color);
     color: white;
     font-size: 20px;
     padding: 0.5em 6.3em;
@@ -189,7 +191,7 @@ h2.product-section-title {
     font-weight: 700;
 }
 a.shop-more-btn {
-    background-color: #d93e22;
+    background-color: var(--primary-color);
     padding: 0.5em 4em;
     color: white;
     text-decoration: none;
@@ -221,7 +223,7 @@ h3.product-name {
 /* story section */
 .out-story-section {
     padding: 50px 0px;
-    background-color: #d93e22;
+    background-color: var(--primary-color);
 }
 .story-content {
     text-align: center;
@@ -254,6 +256,138 @@ p.story-des {
     color: white;
     margin-bottom: 3em;
 }
+/* footer css  */
+.footer-container {
+    background-color: #000;
+    color: white;
+    text-align: center;
+    font-family: Arial, sans-serif;
+    padding-bottom: 20px;
+  }
+  
+  .subscription-section h3 {
+    margin-bottom: 10px;
+    font-size: 25px;
+    margin:0px;
+}
+  /* Subscription Section */
+  .subscription-section {
+    background-color: #c71f3f;
+    padding: 42px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+  
+  
+  .subscription-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+  }
+  
+  .subscribe-input {
+    width: 400px;
+    padding: 10px;
+    border: none;
+    /* border-radius: 5px; */
+}
+
+  .subscribe-btn {
+    padding: 10px 33px;
+    background: black;
+    color: white;
+    border: none;
+    /* border-radius: 5px; */
+    cursor: pointer;
+  }
+  
+  /* Footer Main Content */
+  .footer-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 30px 20px;
+    gap: 20px;
+    text-align: left;
+  }
+  
+  /* Left - Navigation */
+  .footer-nav {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .footer-nav li {
+    margin: 8px 0;
+  }
+  
+  .footer-nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  .footer-nav a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Center - Logo */
+  .footer-logo img {
+    height: 60%;
+  }
+  .footer-logo {
+    text-align: center;
+  }
+  
+  /* Right - Contact & Social */
+  .footer-contact {
+    text-align: right;
+  }
+  
+  .footer-contact p {
+    margin: 5px 0;
+  }
+  
+  .social-icons {
+    display: flex;
+    gap: 10px;
+    justify-content: flex-end;
+  }
+  
+  .social-icons a {
+    color: white;
+    font-size: 20px;
+  }
+  
+  /* Bottom Section */
+  .footer-bottom {
+    border-top: 1px solid #333;
+    padding: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 14px;
+  }
+  footer.footer-container .container {
+    max-width: 1700px;
+}
+.subscription-section {
+    background-color: var(--primary-color);
+  padding: 60px;
+  gap: 8em;
+}
+  
+  .payment-methods {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .payment-methods img {
+    height: 25px;
+  }
 @media (max-width: 990px) {
     a.buy-btn {
         padding: 0.5em 5.1em;
@@ -297,8 +431,45 @@ img.hero-img-second {
     top: 37%;
     left: 15%;
 }
+.footer-content {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .footer-contact {
+    text-align: center;
+  }
+
+  .social-icons {
+    justify-content: center;
+  }
 
 }
+@media (max-width: 768px) {
+    .subscription-form {
+      flex-direction: column;
+    }
+  
+    .subscribe-input {
+      width: 100%;
+      text-align: center;
+    }
+  
+    .subscribe-btn {
+      width: 100%;
+    }
+  
+    .footer-bottom {
+      flex-direction: column;
+      text-align: center;
+    }
+  
+    .payment-methods {
+      justify-content: center;
+    }
+  }
+  
 @media (max-width: 480px) {
     .subscribe-btn {
         width: 50%;

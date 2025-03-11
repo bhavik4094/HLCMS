@@ -12,6 +12,7 @@ const HomePage = () => {
   const [headline, setHeadline] = useState('');
   const [subline, setSubline] = useState('');
   const [heroImage, setHeroImage] = useState('');
+  const [heroImageSecond, setHeroImageSecond] = useState('');
   const [sectionTitle, setsectionTitle] = useState('');
   const [storyHeadline, setstoryHeadline] = useState('');
   const [storyDescription, setstoryDescription] = useState('');
@@ -32,6 +33,7 @@ const HomePage = () => {
         setSubline(servicesSection.subline);
         setServicesData(servicesSection.services);
         setHeroImage(heroSection.hero_img);
+        setHeroImageSecond(heroSection.hero_img_second);
         setsectionTitle(ourstorySection.section_title);
         setstoryHeadline(ourstorySection.headline);
         setstoryDescription(ourstorySection.description);
@@ -51,7 +53,7 @@ const HomePage = () => {
 
   return (
     <div>
-      <Hero heroImage={heroImage} />
+      <Hero heroImage={heroImage} heroImageSecond={heroImageSecond} />
       {/* Passing the fetched data as props to Services component */}
       <Services headline={headline} subline={subline} servicesData={servicesData} />
       <Ourstrory sectionTitle={sectionTitle} storyHeadline={storyHeadline} storyDescription={storyDescription} storyBtnTitle={storyBtnTitle} storyBtnLink={storyBtnLink} storyImage={storyImage} />

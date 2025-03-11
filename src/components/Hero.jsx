@@ -3,18 +3,18 @@ import Butter from 'buttercms';
 
 const butter = Butter(import.meta.env.VITE_BUTTERCMS_API_KEY); // Replace with your actual API key
 
-function Hero({heroImage}) {
+function Hero({heroImage, heroImageSecond}) {
   
   return (
     <div className="hero">
       <div className="container">
         <div className="row">
           <div className="hero-section">
-            {heroImage ? (
+        
               <img className="hero-img" src={heroImage} alt="Hero" />
-            ) : (
-              <p>Loading...</p>
-            )}
+              <div className='dark-overlay'></div>
+              <img className="hero-img-second" src={heroImageSecond} alt="Hero Second" />
+            
           </div>
         </div>
       </div>

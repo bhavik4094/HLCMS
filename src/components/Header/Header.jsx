@@ -1,4 +1,4 @@
-import BrandLogo from "../../assets/img/db.webp";
+import BrandLogo from "../../assets/img/brandlogo.webp";
 
 const Header = ({ leftMenu, rightMenu }) => {
   return (
@@ -24,7 +24,7 @@ const Header = ({ leftMenu, rightMenu }) => {
           </button>
 
 
-          <div className="collapse navbar-collapse justify-content-evenly" id="navbarNav">
+          <div className="collapse navbar-collapse justify-content-center" id="navbarNav">
             {/* Left Menu */}
             <ul className="navbar-nav">
               {leftMenu.map((item) => (
@@ -37,7 +37,7 @@ const Header = ({ leftMenu, rightMenu }) => {
             {/* Logo in Center */}
             <a className="navbar-brand fw-bold fs-3 d-none d-lg-block d-xl-block" href="/">
 
-              <img src={BrandLogo} alt="Berg Bat Logo" />
+              <img className="brand-logo-img" src={BrandLogo} alt="Berg Bat Logo" />
             </a>
 
             {/* Right Menu */}

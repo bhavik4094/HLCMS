@@ -3,14 +3,7 @@ import butterCMS from "../../utils/buttercms";
 import Brandlogo from "../../assets/img/db.webp";
 
 function Header() {
-    const [menuItems, setMenuItems] = useState([]);
-
-  useEffect(() => {
-    butterCMS.content
-      .retrieve(["navigation_menu"])
-      .then((res) => setMenuItems(res.data.data.navigation_menu))
-      .catch((err) => console.error("Error fetching menu:", err));
-  }, []);
+    
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
       <div className="container">

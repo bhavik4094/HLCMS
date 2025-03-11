@@ -1,7 +1,5 @@
 import React from "react";
-import "../../assets/css/footer.css";
 import { FaFacebookF, FaXTwitter, FaInstagram, FaEnvelope } from "react-icons/fa6";
-import BrandLogo from "../../assets/img/footer-logo.webp";
 import paypalLogo from "../../assets/img/Payment-icon.png";
 
 function Footer({ footerMenu, footerImg }) {

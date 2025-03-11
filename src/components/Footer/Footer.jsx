@@ -37,7 +37,7 @@ function Footer({ footerMenu }) {
               </div>
             </div>
             <div className="footer-bottom">
-              <p>© 2025 Delano Bat Company, LLC | All Rights Reserved. Powered By CWS.</p>
+              <p class="font-roboto">© 2025 Delano Bat Company, LLC | All Rights Reserved. Powered By CWS.</p>
               <div className="payment-methods">
                 <img src={paypalLogo} alt="PayPal" />
               </div>

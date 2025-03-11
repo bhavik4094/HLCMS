@@ -24,7 +24,7 @@ const Header = ({leftMenu, rightMenu}) => {
         </button>
         
 
-        <div className="collapse navbar-collapse justify-content-around" id="navbarNav">
+        <div className="collapse navbar-collapse justify-content-evenly" id="navbarNav">
           {/* Left Menu */}
           <ul className="navbar-nav">
             {leftMenu.map((item) => (

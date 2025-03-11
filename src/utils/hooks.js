@@ -1,21 +1,36 @@
 import { useEffect, useState } from "react"
-import {butterCMS} from "./buttercms";
+import butterCMS from "./buttercms";
 
 // load menu items data
 export const useMenuItems = () => {
-  const [menuItems, setMenuItems] = useState([]);
+  const [menus, setMenus] = useState({
+    mainMenu: [],
+    footerMenu: [],
+    leftMenu: [],
+    rightMenu: [],
+  });
 
   useEffect(() => {
     const loadData = async () => { 
-      const menuItems = await butterCMS.content.retrieve(["navigation_menu"]);
-      setMenuItems(menuItems.data.data.navigation_menu[0].menu_items)
-    }
+      const response = await butterCMS.content.retrieve(["navigation_menu"]);
+      const allMenus = response.data.data.navigation_menu;
 
-    loadData()
+      if (allMenus.length > 0) {
+        setMenus({
+          mainMenu: allMenus[0]?.menu_items || [],
+          leftMenu: allMenus[1]?.menu_items || [],
+          rightMenu: allMenus[2]?.menu_items || [],
+          footerMenu: allMenus[3]?.menu_items || [],
+          
+        });
+      }
+    };
+
+    loadData();
   }, []);
 
-  return menuItems
-}
+  return menus;
+};
 
 // load categories
 export const useCategories = () => {

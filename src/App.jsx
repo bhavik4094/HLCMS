@@ -11,7 +11,7 @@ function App() {
   const [copyrightTxt, setCopyrightTxt] = useState([]);
     useEffect(() => {
       butterCMS.page
-        .retrieve('*', 'home')  // Retrieving the 'home' page (or whatever the slug is)
+        .retrieve('*', 'home')  
         .then((res) => {
           const fields = res.data.data.fields;
           const footerSection = fields.footer_component;

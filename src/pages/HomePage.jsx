@@ -22,7 +22,7 @@ const HomePage = () => {
 
   useEffect(() => {
     butter.page
-      .retrieve('*', 'home')  // Retrieving the 'home' page (or whatever the slug is)
+      .retrieve('*', 'home')
       .then((res) => {
         const fields = res.data.data.fields;
         const servicesSection = fields.services_section;
@@ -54,7 +54,6 @@ const HomePage = () => {
   return (
     <div>
       <Hero heroImage={heroImage} heroImageSecond={heroImageSecond} />
-      {/* Passing the fetched data as props to Services component */}
       <Services headline={headline} subline={subline} servicesData={servicesData} />
       <Ourstrory sectionTitle={sectionTitle} storyHeadline={storyHeadline} storyDescription={storyDescription} storyBtnTitle={storyBtnTitle} storyBtnLink={storyBtnLink} storyImage={storyImage} />
       <Product />

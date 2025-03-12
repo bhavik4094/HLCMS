@@ -26,9 +26,24 @@ function Footer({ footerMenu, footerData }) {
               </div>  
               <div className="footer-contact">
                 <div className="social-icons">
-                  <a target="_blank" href="https://www.facebook.com/delanobats/"><FaFacebookF /></a>
-                  <a target="_blank" href="https://www.instagram.com/delanobatco/"><FaInstagram /></a>
-                  <a target="_blank" href="https://x.com/i/flow/login?redirect_after_login=%2FDelanoBats"><FaXTwitter /></a>
+                  {/* <a target="_blank" href={footerData.social_link_facebook}><FaFacebookF /></a>
+                  <a target="_blank" href={footerData.social_link_instagram}><FaInstagram /></a>
+                  <a target="_blank" href={footerData.social_link_x}><FaXTwitter /></a> */}
+                  {footerData.social_link_facebook && (
+                    <a target="_blank" rel="noopener noreferrer" href={footerData.social_link_facebook}>
+                      <FaFacebookF />
+                    </a>
+                  )}
+                  {footerData.social_link_instagram && (
+                    <a target="_blank" rel="noopener noreferrer" href={footerData.social_link_instagram}>
+                      <FaInstagram />
+                    </a>
+                  )}
+                  {footerData.social_link_x && (
+                    <a target="_blank" rel="noopener noreferrer" href={footerData.social_link_x}>
+                      <FaXTwitter />
+                    </a>
+                  )}
                 </div>
                 <p>{footerData.address_line_1} <br />{footerData.address_line_2} <br />{footerData.address_line_3} </p>
                 <p><a href={`mailto:${footerData.email}`}><FaEnvelope /> {footerData.email}</a></p>

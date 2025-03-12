@@ -7,24 +7,26 @@ import butterCMS from "./utils/buttercms";
 
 function App() {
   const {footerMenu, leftMenu, rightMenu} = useMenuItems();
-  const [footerImg, setFooterImg] = useState([]);
-  const [copyrightTxt, setCopyrightTxt] = useState([]);
+  const [footerData, setFooterData] = useState(null);
     useEffect(() => {
       butterCMS.page
         .retrieve('*', 'home')  
         .then((res) => {
-          const fields = res.data.data.fields;
-          const footerSection = fields.footer_component;
-          setFooterImg(footerSection.footer_logo);
-          setCopyrightTxt(footerSection.copyright_label);
+          const footerSection = res.data.data.fields.footer_component;
+          setFooterData(footerSection);  // Set the entire footer section object
         })
-        .catch((err) => console.error('Error fetching data:', err));
+        .catch((err) => console.error('Error fetching footer data:', err));
     }, []);
+
+    // If footer data is not yet fetched, return loading state or placeholder
+    if (!footerData) {
+      return <div>Loading footer...</div>;
+    }
   return (
     <>
     <Header leftMenu={leftMenu} rightMenu={rightMenu}/>
     <Outlet />
-    <Footer footerMenu={footerMenu} footerImg={footerImg} copyrightTxt={copyrightTxt}/>
+    <Footer footerMenu={footerMenu} footerData={footerData}/>
     </>
   )
 }

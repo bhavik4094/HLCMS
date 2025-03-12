@@ -336,10 +336,6 @@ p.story-des {
     font-weight: bold;
   }
   
-  .footer-nav a:hover {
-    text-decoration: underline;
-  }
-  
   /* Center - Logo */
   .footer-logo img {
     height: 60%;
@@ -355,6 +351,11 @@ p.story-des {
   
   .footer-contact p {
     margin: 5px 0;
+  }
+
+  .footer-contact p a{
+    color: #fff;
+    text-decoration: none;
   }
   
   .social-icons {

@@ -2,7 +2,7 @@ import React from "react";
 import { FaFacebookF, FaXTwitter, FaInstagram, FaEnvelope } from "react-icons/fa6";
 import paypalLogo from "../../assets/img/Payment-icon.png";
 
-function Footer({ footerMenu, footerImg, copyrightTxt }) {
+function Footer({ footerMenu, footerData }) {
   return (
     <>
       <footer className="footer-container">
@@ -22,20 +22,20 @@ function Footer({ footerMenu, footerImg, copyrightTxt }) {
                 ))}
               </ul>
               <div className="footer-logo">
-                <img src={footerImg} alt="Berg Bat Logo" />
-              </div>
+                <img src={footerData.footer_logo} alt="Berg Bat Logo" />
+              </div>  
               <div className="footer-contact">
                 <div className="social-icons">
                   <a target="_blank" href="https://www.facebook.com/delanobats/"><FaFacebookF /></a>
                   <a target="_blank" href="https://www.instagram.com/delanobatco/"><FaInstagram /></a>
                   <a target="_blank" href="https://x.com/i/flow/login?redirect_after_login=%2FDelanoBats"><FaXTwitter /></a>
                 </div>
-                <p>Delano Bat Company, LLC <br />4435 Farmington Ave SE <br />Delano, MN 55328</p>
-                <p><FaEnvelope /> sales@delanobats.com</p>
+                <p>{footerData.address_line_1} <br />{footerData.address_line_2} <br />{footerData.address_line_3} </p>
+                <p><a href={`mailto:${footerData.email}`}><FaEnvelope /> {footerData.email}</a></p>
               </div>
             </div>
             <div className="footer-bottom">
-              <p class="font-roboto">{copyrightTxt}</p>
+              <p class="font-roboto">{footerData.copyright_label}</p>
               <div className="payment-methods">
                 <img src={paypalLogo} alt="PayPal" />
               </div>

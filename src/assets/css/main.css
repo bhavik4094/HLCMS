@@ -396,6 +396,31 @@ p.story-des {
   .payment-methods img {
     height: 25px;
   }
+
+/* swiper slider */
+
+.review-slider {text-align: center; padding: 70px 0;}
+.review-slider .section-heading{font-size: 40px; font-weight: 600;}
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 30px;
+}
+.swiper-wrapper{transition-timing-function: linear !important;}
+.heading-text {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1em;
+}
+img.review-stars {height: 20px; margin-right: 10px;}
+
+/* end sldier */
   @media (max-width: 120px) {
     a.buy-btn {
         padding: 0.5em 4.3em;

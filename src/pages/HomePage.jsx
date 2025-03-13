@@ -4,6 +4,7 @@ import Hero from '../components/Hero';
 import Services from "../components/Services";
 import Product from "../components/Product";
 import Ourstrory from "../components/Ourstrory";
+import ReviewSlider from "../components/ReviewSlider";
 
 const butter = Butter(import.meta.env.VITE_BUTTERCMS_API_KEY);
 
@@ -19,6 +20,8 @@ const HomePage = () => {
   const [storyBtnTitle, setstoryBtnTitle] = useState('');
   const [storyBtnLink, setstoryBtnLink] = useState('');
   const [storyImage, setstoryImage] = useState('');
+  const [reviewSilderData, setReviewSilderData] = useState(null);
+  
 
   useEffect(() => {
     butter.page
@@ -28,6 +31,8 @@ const HomePage = () => {
         const servicesSection = fields.services_section;
         const heroSection = fields.hero_section;
         const ourstorySection = fields.our_story_section;
+        const reviewSliderSection = fields.review_slider;
+        
 
         setHeadline(servicesSection.headline);
         setSubline(servicesSection.subline);
@@ -40,12 +45,11 @@ const HomePage = () => {
         setstoryBtnTitle(ourstorySection.button_title);
         setstoryBtnLink(ourstorySection.button_link);
         setstoryImage(ourstorySection.our_story_imag);
+        setReviewSilderData(reviewSliderSection);
 
       })
       .catch((err) => console.error('Error fetching data:', err));
   }, []);
-
-
 
   if (!servicesData.length) {
     return <p>Loading...</p>;
@@ -57,6 +61,7 @@ const HomePage = () => {
       <Services headline={headline} subline={subline} servicesData={servicesData} />
       <Ourstrory sectionTitle={sectionTitle} storyHeadline={storyHeadline} storyDescription={storyDescription} storyBtnTitle={storyBtnTitle} storyBtnLink={storyBtnLink} storyImage={storyImage} />
       <Product />
+      <ReviewSlider reviewSilderData={reviewSilderData}/>
     </div>
   );
 };

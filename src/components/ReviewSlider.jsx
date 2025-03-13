@@ -41,8 +41,8 @@ function ReviewSlider({reviewSilderData}) {
                 </div>
                 <div className="swiper mySwiper">
                     <div className="swiper-wrapper">
-                        {reviewSilderData.slider_images.map((img) => (
-                            <div className="swiper-slide">
+                        {reviewSilderData.slider_images.map((img, index) => (
+                            <div className="swiper-slide review-img" key={index}>
                                 <img src={img.slider_image} alt="Slider images" />
                             </div>
                         ))}

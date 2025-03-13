@@ -5,6 +5,7 @@ import Services from "../components/Services";
 import Product from "../components/Product";
 import Ourstrory from "../components/Ourstrory";
 import ReviewSlider from "../components/ReviewSlider";
+import InstagramFeed from "../components/InstagramFeed";
 
 const butter = Butter(import.meta.env.VITE_BUTTERCMS_API_KEY);
 
@@ -21,6 +22,7 @@ const HomePage = () => {
   const [storyBtnLink, setstoryBtnLink] = useState('');
   const [storyImage, setstoryImage] = useState('');
   const [reviewSilderData, setReviewSilderData] = useState(null);
+  const [instaFeedData, setInstaFeedData] = useState(null);
   
 
   useEffect(() => {
@@ -32,6 +34,7 @@ const HomePage = () => {
         const heroSection = fields.hero_section;
         const ourstorySection = fields.our_story_section;
         const reviewSliderSection = fields.review_slider;
+        const instaFeedSection = fields.instagram_feeds;
         
 
         setHeadline(servicesSection.headline);
@@ -46,6 +49,7 @@ const HomePage = () => {
         setstoryBtnLink(ourstorySection.button_link);
         setstoryImage(ourstorySection.our_story_imag);
         setReviewSilderData(reviewSliderSection);
+        setInstaFeedData(instaFeedSection);
 
       })
       .catch((err) => console.error('Error fetching data:', err));
@@ -62,6 +66,7 @@ const HomePage = () => {
       <Ourstrory sectionTitle={sectionTitle} storyHeadline={storyHeadline} storyDescription={storyDescription} storyBtnTitle={storyBtnTitle} storyBtnLink={storyBtnLink} storyImage={storyImage} />
       <Product />
       <ReviewSlider reviewSilderData={reviewSilderData}/>
+      <InstagramFeed instaFeedData={instaFeedData}/>
     </div>
   );
 };

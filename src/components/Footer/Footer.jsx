@@ -50,7 +50,7 @@ function Footer({ footerMenu, footerData }) {
               </div>
             </div>
             <div className="footer-bottom">
-              <p class="font-roboto">{footerData.copyright_label}</p>
+              <p className="font-roboto">{footerData.copyright_label}</p>
               <div className="payment-methods">
                 <img src={paypalLogo} alt="PayPal" />
               </div>

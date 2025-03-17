@@ -43,7 +43,7 @@ function InstagramFeed({instaFeedData}) {
             <h3 className="instagram-username"><a href={instaFeedData.instagram_profile_link}>{instaFeedData.instagram_username}</a></h3>
             <div className="swiper instagram-slider">
                 <div className="swiper-wrapper">
-                    {instaFeedData.insta_images.map((img, index)=>(
+                    {instaFeedData.insta_images.map((img, index)=>( 
                         <div className="img-wrap-inner swiper-slide" key={index}>
                             <img src={img.insta_image} alt="Instagram Feed Image" className="instagram-img" />
                         </div>

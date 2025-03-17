@@ -55,6 +55,8 @@ const SingleProductPage = () => {
             <div className="faq-part col-lg-6">
               
               <p className="faq-answer">{product.product_description || "No description available."}</p>
+              <p className="powered-title" >{product.powered_by || "No description available."}</p>
+              <p className="powered-des">{product.powered_by_description || "No description available."}</p>
             </div>
             <div className="product-type col-lg-6">
               <button className="add-to-cart">Add to Cart</button>

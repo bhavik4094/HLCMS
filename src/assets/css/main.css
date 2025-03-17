@@ -491,6 +491,9 @@ h3.price {
 .product-details {
   display: flex;
 }
+.powered-title{
+  font-weight: 700;
+}
 button.add-to-cart {
   margin-top: 2em;
   background-color: #d93e22;

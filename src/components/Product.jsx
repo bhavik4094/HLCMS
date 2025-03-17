@@ -1,27 +1,8 @@
 import React, { useEffect, useState } from "react";
 import Butter from "buttercms";
+import { Link } from "react-router-dom";
 
 const butter = Butter(import.meta.env.VITE_BUTTERCMS_API_KEY);
-
-function ProductCard({ product }) {
-    return (
-      <div className="col-lg-3 col-md-6 col-12">
-        <div className="product-card">
-          <img className="product-img" src={product.product_img} alt={product.product_name} />
-          <h3 className="product-name">{product.product_name}</h3>
-          <p className="product-price">${product.product_price}</p>
-          {product.product_link ? (
-            <a className="buy-btn" href={product.product_link} target="_blank" rel="noopener noreferrer">
-              Buy Now
-            </a>
-          ) : (
-            <button className="buy-btn disabled">No Link Available</button>
-          )}
-        </div>
-      </div>
-    );
-  }
-  
 
 function Product() {
   const [products, setProducts] = useState([]);
@@ -31,9 +12,8 @@ function Product() {
     butter.content
       .retrieve(["products"])
       .then((response) => {
-        console.log("ButterCMS Response:", response.data); // Debugging step
         if (response.data.data.products) {
-          setProducts(response.data.data.products);
+          setProducts(response.data.data.products.slice(0, 4)); // Display only first 4 products
         }
         setLoading(false);
       })
@@ -43,6 +23,31 @@ function Product() {
       });
   }, []);
 
+  const ProductCard = ({ product }) => {
+    const formattedSlug = product.product_name
+      .toLowerCase()
+      .replace(/\s+/g, "-") // Replace spaces with "-"
+      .replace(/[^\w-]+/g, ""); // Remove special characters
+
+    return (
+      <div className="col-lg-3 col-md-6 col-12">
+        <div className="product-card">
+          {/* Image wrapped in Link */}
+          <Link to={`/product/${formattedSlug}`} state={{ product }}>
+            <img className="product-img" src={product.product_img} alt={product.product_name} />
+          </Link>
+          <h3 className="product-name">{product.product_name}</h3>
+          <p className="product-price">${product.product_price}</p>
+
+          {/* Updated Buy Now Button as <a> */}
+          <Link to={`/product/${formattedSlug}`} state={{ product }} className="buy-btn">
+            Buy Now
+          </Link>
+        </div>
+      </div>
+    );
+  };
+
   return (
     <div className="product-section">
       <div className="container">
@@ -51,9 +56,7 @@ function Product() {
           {loading ? (
             <p>Loading products...</p>
           ) : (
-            products.map((product) => (
-              <ProductCard key={product.meta.id} product={product} />
-            ))
+            products.map((product) => <ProductCard key={product.meta.id} product={product} />)
           )}
           <div className="btn-part">
             <a className="shop-more-btn" href="#">SHOP MORE</a>

@@ -457,6 +457,68 @@ h3.instagram-username {margin-bottom: 60px;}
 
 /* end instagram feed */
 
+/* single-product-page-css */
+.product-container {
+  padding-top: 8em;
+  padding-bottom: 2em;
+  background-color: black;
+}
+h2.product-name {
+  font-size: 50px;
+  font-weight: 600;
+}
+.redio-btn{
+  margin-right: 5px;
+}
+h3.price {
+  font-size: 30px;
+  font-weight: 600;
+}
+.faq-part.col-lg-6 {
+  max-width: 40em;
+  width: 100%;
+
+  padding-top: 2em;
+}
+.product-all-details .container {
+  max-width: 1700px;
+}
+.product-all-details {
+  padding: 4em 0em;
+  margin: 0em 4em;
+  background-color: white;
+}
+.product-details {
+  display: flex;
+}
+button.add-to-cart {
+  margin-top: 2em;
+  background-color: #d93e22;
+  color: white;
+  border: none;
+  padding: 10px 50px;
+  font-weight: 500;
+}
+
+.option-group h5 {
+  font-size: 25px;
+  font-weight: 500;
+}
+.product-type {
+  padding-left: 4em;
+}
+.option-group label {
+  display: flex;
+  padding: 5px 0;
+}
+.add-to-cart:hover{
+  color: #D93E22;
+  background-color: white;
+  border: 1px solid #D93E22;
+  font-weight: 500;
+}
+
+
 
 @media (max-width: 1440px) {
     a.buy-btn {

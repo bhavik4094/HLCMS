@@ -1,6 +1,7 @@
 import React from "react";
 import { FaFacebookF, FaXTwitter, FaInstagram, FaEnvelope } from "react-icons/fa6";
 import paypalLogo from "../../assets/img/Payment-icon.png";
+import { Link } from "react-router-dom";
 
 function Footer({ footerMenu, footerData }) {
   return (
@@ -18,11 +19,11 @@ function Footer({ footerMenu, footerData }) {
             <div className="footer-content">
               <ul className="footer-nav">
                 {footerMenu.map((item) => (
-                    <li key={item.label}><a href={item.url}>{item.label}</a></li>
+                    <li key={item.label}><Link to={item.url}>{item.label}</Link></li>
                 ))}
               </ul>
               <div className="footer-logo">
-                <img src={footerData.footer_logo} alt="Berg Bat Logo" />
+                <Link to="/"><img src={footerData.footer_logo} alt="Berg Bat Logo" /></Link>
               </div>  
               <div className="footer-contact">
                 <div className="social-icons">

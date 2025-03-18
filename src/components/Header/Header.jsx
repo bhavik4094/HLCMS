@@ -1,4 +1,4 @@
-import { useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import BrandLogo from "../../assets/img/brandlogo.webp";
 
 const Header = ({ leftMenu, rightMenu }) => {
@@ -10,9 +10,9 @@ const Header = ({ leftMenu, rightMenu }) => {
       <nav className={`navbar navbar-expand-lg navbar-light ${isShopPage ? "shop-page" : ""}`}>
         <div className="container">
           {/* Logo in Center */}
-          <a className="navbar-brand fw-bold fs-3 d-block d-lg-none" href="/">
+          <Link className="navbar-brand fw-bold fs-3 d-block d-lg-none" to="/">
             <img src={BrandLogo} alt="Berg Bat Logo" />
-          </a>
+          </Link>
 
           {/* Toggle Button for Mobile */}
           <button
@@ -34,21 +34,21 @@ const Header = ({ leftMenu, rightMenu }) => {
             <ul className="navbar-nav">
               {leftMenu.map((item) => (
                 <li className="nav-item mx-3" key={item.label}>
-                  <a className="nav-link text-white fw-semibold" href={item.url}>{item.label}</a>
+                  <Link className="nav-link text-white fw-semibold" to={item.url}>{item.label}</Link>
                 </li>
               ))}
             </ul>
 
             {/* Logo in Center */}
-            <a className="navbar-brand fw-bold fs-3 d-none d-lg-block d-xl-block" href="/">
+            <Link className="navbar-brand fw-bold fs-3 d-none d-lg-block d-xl-block" to="/">
               <img className="brand-logo-img" src={BrandLogo} alt="Berg Bat Logo" />
-            </a>
+            </Link>
 
             {/* Right Menu */}
             <ul className="navbar-nav">
               {rightMenu.map((item) => (
                 <li className="nav-item mx-3" key={item.label}>
-                  <a className="nav-link text-white fw-semibold" href={item.url}>{item.label}</a>
+                  <Link className="nav-link text-white fw-semibold" to={item.url}>{item.label}</Link>
                 </li>
               ))}
             </ul>

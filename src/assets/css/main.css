@@ -653,6 +653,11 @@ button.add-to-cart {
     }
 }
 @media (max-width: 990px) {
+  .mobile-header {
+    display: flex
+;
+    align-items: center;
+}
     a.buy-btn {
         padding: 0.5em 5.1em !important;
     }

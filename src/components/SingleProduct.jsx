@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import Butter from "buttercms";
+import { Link } from "react-router-dom"; // Ensure React Router is imported
 
 const butter = Butter(import.meta.env.VITE_BUTTERCMS_API_KEY);
 
@@ -8,7 +9,7 @@ const SingleProductPage = () => {
   const { slug } = useParams();
   const [product, setProduct] = useState(null);
   const [loading, setLoading] = useState(true);
-  const [cart, setCart] = useState(JSON.parse(localStorage.getItem("cart")) || []); // Cart stored in localStorage
+  const [cart, setCart] = useState(JSON.parse(localStorage.getItem("cart")) || []);
   const [cartVisible, setCartVisible] = useState(false); // Sidebar visibility
 
   useEffect(() => {
@@ -36,21 +37,17 @@ const SingleProductPage = () => {
   }, [slug]);
 
   useEffect(() => {
-    //  Save cart to localStorage so it persists even after refresh
     localStorage.setItem("cart", JSON.stringify(cart));
   }, [cart]);
 
-  //  Add product to cart
   const addToCart = () => {
     if (!product) return;
 
-    // Create unique key to differentiate similar products
     const uniqueKey = `${product.id}-${product.product_name}`;
 
     const existingItem = cart.find((item) => item.uniqueKey === uniqueKey);
 
     if (existingItem) {
-      // If product exists, increase quantity
       setCart(
         cart.map((item) =>
           item.uniqueKey === uniqueKey
@@ -59,19 +56,16 @@ const SingleProductPage = () => {
         )
       );
     } else {
-      // Otherwise, add as new item
       setCart([...cart, { ...product, quantity: 1, uniqueKey }]);
     }
 
     setCartVisible(true); // Show cart sidebar
   };
 
-  //  Remove item from cart
   const removeFromCart = (uniqueKey) => {
     setCart(cart.filter((item) => item.uniqueKey !== uniqueKey));
   };
 
-  //  Update product quantity
   const updateQuantity = (uniqueKey, amount) => {
     setCart(
       cart.map((item) =>
@@ -87,6 +81,8 @@ const SingleProductPage = () => {
 
   return (
     <div className="product-container">
+   
+
       <div className="product-all-details">
         <div className="container">
           <div className="row">

@@ -465,6 +465,88 @@ nav.navbar.shop-page {
   position: initial ! IMPORTANT;
   background-color: black;
 }
+/* add to cart css */
+.cart-sidebar {
+  position: fixed;
+  right: 0;
+  top: 0;
+  width: 350px;
+  height: 100vh;
+  background: white;
+  box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  overflow-y: auto;
+  transition: transform 0.3s ease-in-out;
+  z-index: 1000;
+}
+
+.cart-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.5rem;
+}
+
+.close-cart {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.cart-item {
+  margin-bottom: 15px;
+}
+.add-btn-part {
+  margin-left: 1em;
+}
+.quantity {
+  display: flex
+;
+}
+button.add-btn {
+  border: none;
+  background-color: transparent;
+}
+.cart-items {
+  margin-top: 2em;
+}
+.cart-details {
+  margin-top: 3em;
+}
+.cart-item img {
+  width: 100%;
+  margin-right: 10px;
+}
+
+.cart-details {
+  flex-grow: 1;
+}
+
+.remove-item {
+  background: none;
+  border: none;
+  color: red;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+.cart-footer {
+  border-top: 1px solid #ddd;
+  padding-top: 10px;
+  text-align: center;
+}
+
+.checkout-btn {
+  background: #ff5733;
+  color: white;
+  padding: 10px;
+  width: 100%;
+  border: none;
+  cursor: pointer;
+}
+
+
 /* instagram feed */
 
 .instagram-section {
@@ -574,7 +656,21 @@ button.add-to-cart {
     a.buy-btn {
         padding: 0.5em 5.1em !important;
     }
-    
+    .product-details {
+      display: flex;
+      flex-direction: column;
+  }
+  .product-meta-details {
+    margin-top: 4em;
+}
+  .product-meta-details{
+    order: 2;
+  }
+  .product-all-details {
+ 
+    margin: 0em 1em;
+   
+}
     .product-card { 
         margin: 0px 15px 30px 15px;
     }

@@ -65,6 +65,8 @@ img.hero-img {
     width: 100%;
     object-fit: cover;
     display: block;
+    position: fixed;
+    z-index: -2;
 }
 
 a.navbar-brand.fw-bold.fs-3.d-none.d-lg-block.d-xl-block {
@@ -399,7 +401,11 @@ p.story-des {
 
 /* swiper slider */
 
-.review-slider {text-align: center; padding: 70px 0;}
+.review-slider {
+  text-align: center;
+   padding: 70px 0;
+   background-color: white;
+  }
 .review-slider .section-heading{font-size: 40px; font-weight: 600;}
 .swiper {
   width: 100%;
@@ -423,6 +429,7 @@ img.review-stars {height: 20px; margin-right: 10px;}
 /* end sldier */
 
 /* instagram feed */
+
 
 .instagram-section {
   background-color: #010A1E;

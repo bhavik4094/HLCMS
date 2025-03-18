@@ -36,11 +36,11 @@ const SingleProductPage = () => {
   }, [slug]);
 
   useEffect(() => {
-    // ✅ Save cart to localStorage so it persists even after refresh
+    //  Save cart to localStorage so it persists even after refresh
     localStorage.setItem("cart", JSON.stringify(cart));
   }, [cart]);
 
-  // ✅ Add product to cart
+  //  Add product to cart
   const addToCart = () => {
     if (!product) return;
 
@@ -66,12 +66,12 @@ const SingleProductPage = () => {
     setCartVisible(true); // Show cart sidebar
   };
 
-  // ✅ Remove item from cart
+  //  Remove item from cart
   const removeFromCart = (uniqueKey) => {
     setCart(cart.filter((item) => item.uniqueKey !== uniqueKey));
   };
 
-  // ✅ Update product quantity
+  //  Update product quantity
   const updateQuantity = (uniqueKey, amount) => {
     setCart(
       cart.map((item) =>

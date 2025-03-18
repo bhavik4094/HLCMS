@@ -250,7 +250,6 @@ a.readbtn {
     text-decoration: none;
     border: 1px solid white;
     padding: 16px 40px;
-    border-radius: 21px;
 }
 a.readbtn:hover {
     background-color: white;

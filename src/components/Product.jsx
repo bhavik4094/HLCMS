@@ -59,7 +59,8 @@ function Product() {
             products.map((product) => <ProductCard key={product.meta.id} product={product} />)
           )}
           <div className="btn-part">
-            <a className="shop-more-btn" href="#">SHOP MORE</a>
+           <Link className="shop-more-btn" to="/shop">SHOP MORE</Link>
+
           </div>
         </div>
       </div>

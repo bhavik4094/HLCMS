@@ -38,6 +38,7 @@ h1,h2,h3,h4,h5,h6 {
 button.navbar-toggler {
     border: 0;
 }
+
 nav.navbar {
     position: absolute !important;
     top: 0;
@@ -175,6 +176,7 @@ img.product-img {
 .product-card {
     background-color: white;
     padding: 30px 20px;
+    margin-bottom: 1.7em;
 }
 a.buy-btn {
     background-color: var(--primary-color);
@@ -427,7 +429,42 @@ p.story-des {
 img.review-stars {height: 20px; margin-right: 10px;}
 
 /* end sldier */
-
+/* Shop page css */
+h3.page-title-name {
+  color: white;
+  font-size: 40px;
+}
+.page-title-part {
+  height: 23vh;
+  background-image: url(/src/assets/img/ballpark-min.webp);
+  display: flex;
+  align-items: center;
+  background-position: center;
+  justify-content: center;
+  background-repeat: no-repeat;
+  width: 100%;
+  background-size: cover;
+  position: relative;
+}
+.page-title-part::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4); 
+}
+.page-title-name {
+  position: relative; 
+  color: #fff; 
+  font-size: 2rem;
+  font-weight: bold;
+}
+nav.navbar.shop-page {
+  position: initial ! IMPORTANT;
+  background-color: black;
+}
 /* instagram feed */
 
 .instagram-section {

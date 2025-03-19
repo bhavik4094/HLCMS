@@ -5,7 +5,9 @@ import CartSidebar from "../CartSidebar";  // Import CartSidebar Component
 
 const Header = ({ leftMenu, rightMenu }) => {
   const location = useLocation();
+  
   const isShopPage = location.pathname === "/shop";
+  const isCheckoutPage = location.pathname === "/checkout";
 
   const [cartItems, setCartItems] = useState(JSON.parse(localStorage.getItem("cart")) || []);
   const [cartVisible, setCartVisible] = useState(false);
@@ -33,7 +35,7 @@ const Header = ({ leftMenu, rightMenu }) => {
 
   return (
     <header className="trans-header">
-      <nav className={`navbar navbar-expand-lg navbar-light ${isShopPage ? "shop-page" : ""}`}>
+      <nav className={`navbar navbar-expand-lg navbar-light ${isShopPage ? "shop-page" : ""}${isCheckoutPage ? "shop-page" : ""}`}>
         <div className="container">
           <Link className="navbar-brand fw-bold fs-3 d-block d-lg-none" to="/">
             <img src={BrandLogo} alt="Berg Bat Logo" />

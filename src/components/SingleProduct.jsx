@@ -1,18 +1,17 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import Butter from "buttercms";
-import { Link } from "react-router-dom"; // Ensure React Router is imported
 
 const butter = Butter(import.meta.env.VITE_BUTTERCMS_API_KEY);
 
 const SingleProductPage = () => {
   const { slug } = useParams();
+  const navigate = useNavigate();
   const [product, setProduct] = useState(null);
   const [loading, setLoading] = useState(true);
   const [cart, setCart] = useState(JSON.parse(localStorage.getItem("cart")) || []);
   const [cartVisible, setCartVisible] = useState(false); // Sidebar visibility
 
-  // Fetching product details from ButterCMS
   useEffect(() => {
     butter.content
       .retrieve(["products"])
@@ -37,17 +36,14 @@ const SingleProductPage = () => {
       });
   }, [slug]);
 
-  // Persist cart to local storage
   useEffect(() => {
     localStorage.setItem("cart", JSON.stringify(cart));
   }, [cart]);
 
-  // Add product to the cart
   const addToCart = () => {
     if (!product) return;
 
     const uniqueKey = `${product.id}-${product.product_name}`;
-
     const existingItem = cart.find((item) => item.uniqueKey === uniqueKey);
 
     if (existingItem) {
@@ -66,12 +62,10 @@ const SingleProductPage = () => {
     window.dispatchEvent(new Event("cartUpdated"));
   };
 
-  // Remove item from the cart
   const removeFromCart = (uniqueKey) => {
     setCart(cart.filter((item) => item.uniqueKey !== uniqueKey));
   };
 
-  // Update item quantity in the cart
   const updateQuantity = (uniqueKey, amount) => {
     setCart(
       cart.map((item) =>
@@ -82,7 +76,6 @@ const SingleProductPage = () => {
     );
   };
 
-  // Loading and product not found states
   if (loading) return <p>Loading product...</p>;
   if (!product) return <p>Product not found!</p>;
 
@@ -91,7 +84,6 @@ const SingleProductPage = () => {
       <div className="product-all-details">
         <div className="container">
           <div className="row">
-            {/* Product Details */}
             <div className="product-details-part">
               <div className="product-details">
                 <div className="product-meta-details col-12 col-lg-4">
@@ -108,7 +100,6 @@ const SingleProductPage = () => {
               </div>
             </div>
 
-            {/* Product Description */}
             <div className="faq-part col-12 col-lg-6">
               <p className="faq-answer">
                 {product.product_description || "No description available."}
@@ -121,7 +112,6 @@ const SingleProductPage = () => {
               </p>
             </div>
 
-            {/* Add to Cart Button */}
             <div className="product-type col-12 col-lg-6">
               <button className="add-to-cart" onClick={addToCart}>
                 Add to Cart
@@ -131,7 +121,6 @@ const SingleProductPage = () => {
         </div>
       </div>
 
-      {/* Cart Sidebar */}
       {cartVisible && (
         <div className="cart-sidebar">
           <div className="cart-header">
@@ -174,7 +163,20 @@ const SingleProductPage = () => {
                     className="remove-item"
                     onClick={() => removeFromCart(item.uniqueKey)}
                   >
-                  <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" color="red" height="20" width="20" xmlns="http://www.w3.org/2000/svg" style={{color: "red"}}><path fill="none" d="M0 0h24v24H0z"></path><path d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM19 4h-3.5l-1-1h-5l-1 1H5v2h14V4z"></path></svg>
+                    <svg
+                      stroke="currentColor"
+                      fill="currentColor"
+                      stroke-width="0"
+                      viewBox="0 0 24 24"
+                      color="red"
+                      height="20"
+                      width="20"
+                      xmlns="http://www.w3.org/2000/svg"
+                      style={{ color: "red" }}
+                    >
+                      <path fill="none" d="M0 0h24v24H0z"></path>
+                      <path d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM19 4h-3.5l-1-1h-5l-1 1H5v2h14V4z"></path>
+                    </svg>
                   </button>
                 </div>
               ))
@@ -189,7 +191,9 @@ const SingleProductPage = () => {
                 .reduce((acc, item) => acc + item.product_price * item.quantity, 0)
                 .toFixed(2)}
             </p>
-            <button className="checkout-btn">Proceed to Checkout</button>
+            <button className="checkout-btn" onClick={() => navigate("/checkout")}>
+              Proceed to Checkout
+            </button>
           </div>
         </div>
       )}
